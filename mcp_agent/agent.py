@@ -83,20 +83,20 @@ root_agent = LlmAgent(
     tools=[
         get_weather,
         get_current_time,
-        MCPToolset(
-            connection_params=StdioServerParameters(
-                command="npx",
-                args=[
-                    "-y",
-                    "@modelcontextprotocol/server-google-maps",
-                ],
-                env={
-                    "GOOGLE_MAPS_API_KEY": os.environ.get(
-                        "GOOGLE_MAPS_PLATFORM_API_KEY"
-                    )
-                },
-            ),
-        ),
+        # MCPToolset(
+        #     connection_params=StdioServerParameters(
+        #         command="npx",
+        #         args=[
+        #             "-y",
+        #             "@modelcontextprotocol/server-google-maps",
+        #         ],
+        #         env={
+        #             "GOOGLE_MAPS_API_KEY": os.environ.get(
+        #                 "GOOGLE_MAPS_PLATFORM_API_KEY"
+        #             )
+        #         },
+        #     ),
+        # ),
     ],
     before_agent_callback=opik_tracer.before_agent_callback,
     after_agent_callback=opik_tracer.after_agent_callback,
