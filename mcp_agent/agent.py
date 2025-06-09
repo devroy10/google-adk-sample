@@ -7,7 +7,7 @@ from google.adk.agents import LlmAgent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
 from opik.integrations.adk import OpikTracer
 
-AGENT_MODEL = "gemini-2.0-flash"
+AGENT_MODEL = "gemini-2.0-flash-lite"
 AGENT_NAME = "weather_time_city_agent"
 
 
@@ -105,4 +105,3 @@ root_agent = LlmAgent(
     before_tool_callback=opik_tracer.before_tool_callback,
     after_tool_callback=opik_tracer.after_tool_callback,
 )
-
